@@ -50,3 +50,14 @@ end
 Then /I should(not)? find "(.*)"/ do |no,text|
   assert (no==nil and page.body=~text)
 end
+
+When /.* (\w+) page for "(\w+)"/ do |page,movie|
+  debugger
+  @movie=Movie.find(:conditions => {:title => "{#movie}"})
+  case page
+  when /edit/
+    visit edit_movie_path(@movie)
+  when /details/
+    visit movie_path(@movie)
+  end
+end
