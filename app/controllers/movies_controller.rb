@@ -58,7 +58,7 @@ class MoviesController < ApplicationController
   end
 
   def similar
-    debugger
+    # debugger
     @field=params[:field]
     @value=params[:value]
     @title=params[:title]
