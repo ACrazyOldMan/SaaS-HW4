@@ -58,12 +58,12 @@ class MoviesController < ApplicationController
   end
 
   def similar
-    # debugger
+    debugger
     @field=params[:field]
     @value=params[:value]
     @title=params[:title]
 
-    if @value==nil
+    if @value==nil or @value==''
       @msg="'#{@title}' has no #{@field} info"
     else
       @msg="Similar Movies to #{@title}"

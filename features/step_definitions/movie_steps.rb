@@ -48,7 +48,7 @@ end
 # end
 
 Then /should( not)? find "(.*)"/ do |no,text|
-# debugger
+ # debugger
   assert ((no==nil and html.include?(text)) or (no!=nil and !html.include?(text)))
 end
 
