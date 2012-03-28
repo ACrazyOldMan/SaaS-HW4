@@ -38,17 +38,18 @@ When /I (un)?check: (.*)/ do |uncheck, rating_list|
   end
 end
 
-When /I sort by (\w+)/ do |by|
+When /sort by (\w+)/ do |by|
   click_link("#{by}_header")
 end
 
-Then /I should find (\w+)/ do |amount|
-  debugger
-  assert false
-end
+# Then /should find (\w+)/ do |amount|
+# debugger
+# assert false
+# end
 
-Then /I should(not)? find "(.*)"/ do |no,text|
-  assert (no==nil and page.body=~text)
+Then /should( not)? find "(.*)"/ do |no,text|
+  debugger
+  assert (no==nil and html=~"#{text}")
 end
 
 When /(?:am on|go to) the ([\w\s]+) page for "([\w\s]+)"/ do |page,movie|
