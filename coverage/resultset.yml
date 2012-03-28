@@ -18,8 +18,8 @@ Cucumber Features:
     /home/saasbook/SaaS-HW4/app/controllers/movies_controller.rb: 
     - 1
     - 1
-    - 4
-    - 4
+    - 3
+    - 3
     - 
     - 
     - 
@@ -86,4 +86,4 @@ Cucumber Features:
     - 0
     - 
     - 
-  :created_at: 2012-03-28 02:59:41.726679 -04:00
+  :created_at: 2012-03-28 03:35:59.731578 -04:00
