@@ -52,12 +52,17 @@ Then /I should(not)? find "(.*)"/ do |no,text|
 end
 
 When /.* (\w+) page for "(\w+)"/ do |page,movie|
-  debugger
-  @movie=Movie.find(:conditions => {:title => "{#movie}"})
-  case page
-  when /edit/
-    visit edit_movie_path(@movie)
-  when /details/
-    visit movie_path(@movie)
+# debugger
+  @movie=Movie.find(:first,:conditions => {:title => "{#movie}"})
+
+  if @movie!=nil
+    case page
+    when /edit/
+      visit edit_movie_path(@movie)
+    when /details/
+      visit movie_path(@movie)
+    end
+  else
+    visit movies_path
   end
 end
