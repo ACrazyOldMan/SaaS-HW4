@@ -58,7 +58,17 @@ class MoviesController < ApplicationController
   end
 
   def similar
+    # debugger
+    @field=params[:field]
+    @value=params[:value]
+    @title=params[:title]
 
+    if @value==nil
+      @msg=''
+    else
+      @msg="Similar Movies to #{@title}"
+      @movies=Movie.all(:conditions=>{@field=>@value})
+    end
   end
 
 end
