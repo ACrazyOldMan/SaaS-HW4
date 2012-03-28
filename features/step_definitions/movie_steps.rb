@@ -53,7 +53,7 @@ end
 
 When /.* (\w+) page for "(\w+)"/ do |page,movie|
 # debugger
-  @movie=Movie.find(:first,:conditions => {:title => "{#movie}"})
+  @movie=Movie.find(:first,:conditions => {:title => movie})
 
   if @movie!=nil
     case page
@@ -64,5 +64,15 @@ When /.* (\w+) page for "(\w+)"/ do |page,movie|
     end
   else
     visit movies_path
+  end
+end
+
+Then /.* (\w+) of "(\w+)" should be "(\w+)"/ do |field,movie,value|
+  @movie=Movie.find(:first,:conditions => {:title => movie})
+  debugger
+  if @movie==nil
+    assert false
+  else
+    assert @movie[field]==value
   end
 end

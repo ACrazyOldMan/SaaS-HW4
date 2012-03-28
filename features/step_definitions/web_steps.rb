@@ -58,6 +58,7 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
+  # #debugger
   fill_in(field, :with => value)
 end
 
@@ -121,7 +122,7 @@ Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
 end
 
 Then /^(?:|I )should not see "([^"]*)"$/ do |text|
-  debugger
+   #debugger
   if page.respond_to? :should
     page.should have_no_content(text)
   else
