@@ -48,8 +48,8 @@ end
 # end
 
 Then /should( not)? find "(.*)"/ do |no,text|
-  debugger
-  assert (no==nil and html=~"#{text}")
+# debugger
+  assert (no==nil and html.include?(text)) or (no!=nil and !html.include?(text))
 end
 
 When /(?:am on|go to) the ([\w\s]+) page for "([\w\s]+)"/ do |page,movie|
