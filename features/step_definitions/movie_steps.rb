@@ -51,7 +51,7 @@ Then /I should(not)? find "(.*)"/ do |no,text|
   assert (no==nil and page.body=~text)
 end
 
-When /.* (\w+) page for "(\w+)"/ do |page,movie|
+When /([\w\s]+) page for "([\w\s]+)"/ do |page,movie|
 # debugger
   @movie=Movie.find(:first,:conditions => {:title => movie})
 
@@ -67,7 +67,7 @@ When /.* (\w+) page for "(\w+)"/ do |page,movie|
   end
 end
 
-Then /.* (\w+) of "(\w+)" should be "(\w+)"/ do |field,movie,value|
+Then /([\s\w]+) of "([\s\w]+)" should be "([\s\w]+)"/ do |field,movie,value|
   @movie=Movie.find(:first,:conditions => {:title => movie})
   debugger
   if @movie==nil
