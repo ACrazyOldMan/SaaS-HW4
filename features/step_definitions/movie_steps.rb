@@ -69,10 +69,10 @@ end
 
 Then /([\s\w]+) of "([\s\w]+)" should be "([\s\w]+)"/ do |field,movie,value|
   @movie=Movie.find(:first,:conditions => {:title => movie})
-  debugger
+  # debugger
   if @movie==nil
     assert false
   else
-    assert @movie[''+field]==value
+    assert @movie["{#field}"]==value
   end
 end
