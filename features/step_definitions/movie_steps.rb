@@ -73,6 +73,6 @@ Then /([\s\w]+) of "([\s\w]+)" should be "([\s\w]+)"/ do |field,movie,value|
   if @movie==nil
     assert false
   else
-    assert @movie[field]==value
+    assert @movie[''+field]==value
   end
 end
