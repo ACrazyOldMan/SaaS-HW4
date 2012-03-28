@@ -58,7 +58,7 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
-  # #debugger
+# #debugger
   fill_in(field, :with => value)
 end
 
@@ -122,7 +122,7 @@ Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
 end
 
 Then /^(?:|I )should not see "([^"]*)"$/ do |text|
-   #debugger
+#debugger
   if page.respond_to? :should
     page.should have_no_content(text)
   else
@@ -229,7 +229,7 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label
   end
 end
 
-Then /^(?:|I )should be on (.+)$/ do |page_name|
+Then /^(?:|I )should be on ([\w\s]+)$/ do |page_name|
   current_path = URI.parse(current_url).path
   if current_path.respond_to? :should
     current_path.should == path_to(page_name)
