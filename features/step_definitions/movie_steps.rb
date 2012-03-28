@@ -49,7 +49,7 @@ end
 
 Then /should( not)? find "(.*)"/ do |no,text|
 # debugger
-  assert (no==nil and html.include?(text)) or (no!=nil and !html.include?(text))
+  assert ((no==nil and html.include?(text)) or (no!=nil and !html.include?(text)))
 end
 
 When /(?:am on|go to) the ([\w\s]+) page for "([\w\s]+)"/ do |page,movie|
@@ -69,7 +69,7 @@ When /(?:am on|go to) the ([\w\s]+) page for "([\w\s]+)"/ do |page,movie|
 end
 
 Then /(?:should be on) the ([\w\s]+) page for "([\w\s]+)"/ do |page,movie|
-  debugger
+ # debugger
 end
 
 Then /([\w]+) of "([\s\w]+)" should be "([\s\w]+)"/ do |field,movie,value|
