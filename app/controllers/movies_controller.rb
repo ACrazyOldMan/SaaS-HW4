@@ -67,7 +67,7 @@ class MoviesController < ApplicationController
       @msg="'#{@title}' has no #{@field} info"
     else
       @msg="Similar Movies to #{@title}"
-      @movies=Movie.all(:conditions=>{@field=>@value})
+      @movies=Movie.similar(@field,@value)
     end
   end
 
